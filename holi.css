@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ff0080, #ff8c00, #40e0d0, #ff3cac);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+    flex-direction: column;
+    text-align: center;
+}
+
+@keyframes gradientBG{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+
+.input-container{
+    z-index: 2;
+}
+
+input{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 18px;
+    width: 250px;
+}
+
+button{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    margin-left: 10px;
+    background: yellow;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    transform: scale(1.1);
+    background: white;
+}
+
+.holi-text{
+    font-size: 60px;
+    color: white;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #ff0,
+                 0 0 40px #f0f,
+                 0 0 60px #00ffff;
+    animation: glow 2s infinite alternate;
+    display: none;
+    z-index: 2;
+}
+
+@keyframes glow{
+    from{ transform: scale(1);}
+    to{ transform: scale(1.1);}
+}
+
+.particle{
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: explode 2s linear forwards;
+}
+
+@keyframes explode{
+    to{
+        transform: translate(var(--x), var(--y));
+        opacity: 0;
+    }
+}
